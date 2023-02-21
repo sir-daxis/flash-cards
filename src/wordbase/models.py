@@ -36,7 +36,7 @@ class Person(models.Model):
     name = models.ForeignKey(Word, on_delete=models.CASCADE)
     personality = models.CharField(max_length=1)
 
+
 class Prular(models.Model):
     name = models.ForeignKey(Word, on_delete=models.CASCADE)
     personality = models.CharField(max_length=50)
-

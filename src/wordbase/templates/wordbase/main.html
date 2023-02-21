@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flash cards: app to learn German!</title>
+</head>
+<body>
+    <h1>Choose what you want to do:</h1>
+    <p>
+        <ul>
+            <li>
+                <a href="{% url 'wordbase:index' %}">
+                    List of words in base.
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'wordbase:add_word' %}">
+                    Add a word to the list.
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'wordbase:test' %}">
+                    Get random word and write its meaning.
+                </a>
+            </li>
+        </ul>
+    </p>
+
+</body>
+</html>
