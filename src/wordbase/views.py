@@ -12,7 +12,9 @@ def main(request):
 
 
 def index(request):
-    return HttpResponse('View: index')
+    words_list = Word.objects.order_by('-pk')
+    context = {'words_list': words_list}
+    return render(request, 'wordbase/index.html', context)
 
 
 def add_word(request):

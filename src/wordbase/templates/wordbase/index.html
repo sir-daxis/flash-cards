@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flash cards: app to learn German!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'wordbase/main.css' %}">
+
+</head>
+<body>
+    <h1>List of all words in database:</h1>
+    <p>
+    {% if words_list %}
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Polish meaning</th>
+                <th>Word type</th>
+                <th>User</th>
+                <th>Pub date</th>
+                <th>Last checked</th>
+                <th>Ratio</th>
+            </tr>
+            {% for word in words_list %}
+            <tr>
+                <td>{{word.name}}</td>
+                <td>{{word.meaning}}</td>
+                <td>{{word.word_class}}</td>
+                <td>{{word.user}}</td>
+                <td>{{word.pub_date}}</td>
+                <td>{{word.last_question}}</td>
+                <td>{{word.ratio_correct}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+    There is no data available to show.
+    {% endif %}
+    </p>
+</body>
+</html>
