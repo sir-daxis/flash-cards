@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flash cards: app to learn German!</title>
+</head>
+<body>
+<h1>Write German meaning of "{{ word.meaning }}" is : {{ word.name }}</h1>
+<p>
+    Your answer is: {{answer}}
+</p>
+<p>
+    {% if correct_answer %} Congratulation! You write correct answer!
+    {% else %} Ohhh, don't worry. Next time would be better!
+    {% endif %}
+</p>
+<ul>
+   <li>Number of demands: {{ word.num_answer }}</li>
+   <li>Number of correct answers: {{ word.num_correct }}</li>
+</ul>
+<button>
+    <a href="{% url 'wordbase:run_test' %}">Once again?</a>
+</button>
+</body>
+</html>
