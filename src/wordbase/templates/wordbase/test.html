@@ -10,7 +10,7 @@
     <p>
         <form action="{% url 'wordbase:reply' word.id %}" method="post">
         {% csrf_token %}
-            <input  class="input border" type="text" name="answer" placeholder="Write here!" required autocomplete="off">
+            <input  class="input border" type="text" name="answer" placeholder="Write here!" required autocomplete="off" autofocus>
             <input type="submit" value="Check!">
         </form>
     </p>
